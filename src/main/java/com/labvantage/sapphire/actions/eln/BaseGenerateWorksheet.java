@@ -218,6 +218,7 @@ public class BaseGenerateWorksheet extends BaseELNAction {
             this.getSequenceProcessor(),
             this.templateoptions.getProperty("worksheetnametemplate", defaultworksheetname),
             substitutions, (DataSet) null);
+        worksheetname = worksheetname.substring(0,worksheetname.indexOf(" ")).replace("_W","") +" " + worksheetname.substring(worksheetname.indexOf(" ")+1);
         PropertyList wsProps = new PropertyList();
         wsProps.setProperty("sdcid", "LV_Worksheet");
         wsProps.setProperty("worksheetversionid", "1");
